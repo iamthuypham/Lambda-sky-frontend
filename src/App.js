@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
+import SearchBar from "./components/searchbar/index.js";
 
 class App extends Component {
   render() {
     return (
-      <Button variant="contained" color="primary">
-      Hello Sky Lambda
-    </Button>
+      <div>
+        <Button variant="contained" color="primary">
+          Hello Sky Lambda
+        </Button>
+
+        <SearchBar />
+      </div>
     );
   }
 }
