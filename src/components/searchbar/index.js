@@ -12,6 +12,12 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: "center",
     color: theme.palette.text.secondary
+  },
+  destination: {
+    padding: 50
+  },
+  checkin: {
+    padding: 50
   }
 });
 
@@ -19,7 +25,7 @@ function SearchBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <div className="destination">
+      <div className={classes.destination}>
         Destination <br />
         <Grid container spacing={24}>
           <Grid item xs={12}>
@@ -27,22 +33,27 @@ function SearchBar(props) {
           </Grid>
         </Grid>
       </div>
-      <div className="checkin">Checkin</div>
-      <Grid container spacing={24}>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
+      <div className={classes.checkin}>
+        Checkin
+        <Grid container spacing={24}>
+          <Grid item xs={3}>
+            <Paper className={classes.paper}>xs=3</Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper className={classes.paper}>xs=3</Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper className={classes.paper}>xs=3</Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper className={classes.paper}>xs=3</Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-      </Grid>
+      </div>
       <div />
+      <div className="icons" />
+      <i class="material-icons">flight</i> Add a flight <br />
+      <i class="material-icons">directions_car</i> Add a car
     </div>
   );
 }
