@@ -5,8 +5,8 @@ class App extends Component {
   render() {
     return (
       <Button variant="contained" color="primary">
-      Hello Sky Lambda
-    </Button>
+        Hello Sky Lambda
+      </Button>
     );
   }
 }
