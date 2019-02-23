@@ -14,6 +14,13 @@ const styles = theme => ({
     flexWrap: "wrap",
     width: "100"
   },
+  doubleColumn: {
+    display: "flex",
+    flex: 2
+  },
+  column1: {
+    width: 900
+  },
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: "center",
@@ -25,6 +32,13 @@ const styles = theme => ({
   checkin: {
     padding: 50
   },
+  column2: {
+    display: "flex",
+    flexDirection: "column",
+    flex: 1,
+    flexBasis: 100,
+    marginTop: 75
+  },
   icons: {
     display: "flex"
   }
@@ -35,37 +49,41 @@ function SearchBar(props) {
   return (
     <div className={classes.root}>
       <div className={classes.row}>
-        <div className={classes.column1}>
-          <div className={classes.destination}>
-            Destination <br />
-            <Grid container spacing={24}>
-              <Grid item xs={12}>
-                <Paper className={classes.paper}>Destination</Paper>
+        <div className={classes.doubleColumn}>
+          <div className={classes.column1}>
+            <div className={classes.destination}>
+              Destination <br />
+              <Grid container spacing={24}>
+                <Grid item xs={12}>
+                  <Paper className={classes.paper}>Destination</Paper>
+                </Grid>
               </Grid>
-            </Grid>
+            </div>
+            <div className={classes.checkin}>
+              Checkin
+              <Grid container spacing={24}>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+              </Grid>
+            </div>
           </div>
-          <div className={classes.checkin}>
-            Checkin
-            <Grid container spacing={24}>
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>xs=3</Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>xs=3</Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>xs=3</Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>xs=3</Paper>
-              </Grid>
-            </Grid>
+          <div />
+          <div className={classes.column2}>
+            <div className={classes.icons} />
+            <i class="material-icons">flight</i> Add a flight <br />
+            <i class="material-icons">directions_car</i> Add a car
           </div>
         </div>
-        <div />
-        <div className={classes.icons} />
-        <i class="material-icons">flight</i> Add a flight <br />
-        <i class="material-icons">directions_car</i> Add a car
       </div>
     </div>
   );
