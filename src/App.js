@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
-const Home = () => (
+const Home = props => (
   <div>
-    <h2>Home</h2>
+    <Button>Home</Button>
   </div>
 );
 
 class App extends Component {
   render() {
-    return <Route exact path="/" component={Home} />;
+    return (
+      <Router>
+        <Route exact path="/" component={Home} />
+      </Router>
+    );
   }
 }
 
