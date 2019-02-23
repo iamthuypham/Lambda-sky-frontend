@@ -8,7 +8,9 @@ import { wrap } from "module";
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "#661FFF"
+    backgroundColor: "#661FFF",
+    fontSize: 20,
+    color: "white"
   },
   row: {
     display: "flex",
@@ -27,7 +29,8 @@ const styles = theme => ({
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: "center",
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
+    marginTop: 10
   },
   destination: {
     padding: 50
@@ -39,9 +42,8 @@ const styles = theme => ({
   column2: {
     display: "flex",
     flexDirection: "column",
-    flex: 1,
-    flexBasis: 100,
-    marginTop: 45,
+
+    marginTop: 70,
     marignLeft: 50
   },
   icons: {
