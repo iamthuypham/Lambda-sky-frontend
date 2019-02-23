@@ -57,7 +57,8 @@ const styles = theme => ({
 
   button: {
     backgroundColor: "gold",
-    width: 100
+    width: 100,
+    marginBottom: 20
   },
   label: {
     verticalAlign: "top"
@@ -87,19 +88,19 @@ function SearchBar(props) {
                 </Grid>
                 <Grid item xs={3}>
                   <label for="destination">Check-out</label>
-                  <Paper className={classes.paper}>xs=3</Paper>
+                  <Paper className={classes.paper}>mm/dd/yyyy</Paper>
                 </Grid>
                 <Grid item xs={2}>
                   <label for="destination">Rooms</label>
-                  <Paper className={classes.paper}>xs=3</Paper>
+                  <Paper className={classes.paper}>1</Paper>
                 </Grid>
                 <Grid item xs={2}>
                   <label for="destination">Adults(18+)</label>
-                  <Paper className={classes.paper}>xs=3</Paper>
+                  <Paper className={classes.paper}>1</Paper>
                 </Grid>
                 <Grid item xs={2}>
                   <label for="destination">Children</label>
-                  <Paper className={classes.paper}>xs=3</Paper>
+                  <Paper className={classes.paper}>1</Paper>
                 </Grid>
               </Grid>
             </div>
@@ -113,6 +114,7 @@ function SearchBar(props) {
             <div>
               <i class="material-icons">directions_car</i> Add a car
             </div>
+
             <div className={classes.buttonWrapper}>
               <Button className={classes.button}>Search</Button>
             </div>
