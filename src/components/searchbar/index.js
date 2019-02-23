@@ -2,6 +2,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import { wrap } from "module";
 
 const styles = theme => ({
   root: {
@@ -19,7 +21,8 @@ const styles = theme => ({
     flex: 2
   },
   column1: {
-    width: 900
+    width: 900,
+    marginLeft: 20
   },
   paper: {
     padding: theme.spacing.unit * 2,
@@ -30,17 +33,32 @@ const styles = theme => ({
     padding: 50
   },
   checkin: {
-    padding: 50
+    padding: 50,
+    flexWrap: wrap
   },
   column2: {
     display: "flex",
     flexDirection: "column",
     flex: 1,
     flexBasis: 100,
-    marginTop: 75
+    marginTop: 45,
+    marignLeft: 50
   },
   icons: {
-    display: "flex"
+    // display: "flex"
+  },
+
+  buttonWrapper: {
+    marginTop: 200,
+    marginLeft: 50
+  },
+
+  button: {
+    backgroundColor: "gold",
+    width: 100
+  },
+  label: {
+    verticalAlign: "top"
   }
 });
 
@@ -52,26 +70,33 @@ function SearchBar(props) {
         <div className={classes.doubleColumn}>
           <div className={classes.column1}>
             <div className={classes.destination}>
-              Destination <br />
               <Grid container spacing={24}>
                 <Grid item xs={12}>
+                  <label for="destination">Destination:</label>
                   <Paper className={classes.paper}>Destination</Paper>
                 </Grid>
               </Grid>
             </div>
             <div className={classes.checkin}>
-              Checkin
               <Grid container spacing={24}>
                 <Grid item xs={3}>
-                  <Paper className={classes.paper}>xs=3</Paper>
+                  <label for="destination">Check-in</label>
+                  <Paper className={classes.paper}>mm/dd/yyyy</Paper>
                 </Grid>
                 <Grid item xs={3}>
+                  <label for="destination">Check-out</label>
                   <Paper className={classes.paper}>xs=3</Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={2}>
+                  <label for="destination">Rooms</label>
                   <Paper className={classes.paper}>xs=3</Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={2}>
+                  <label for="destination">Adults(18+)</label>
+                  <Paper className={classes.paper}>xs=3</Paper>
+                </Grid>
+                <Grid item xs={2}>
+                  <label for="destination">Children</label>
                   <Paper className={classes.paper}>xs=3</Paper>
                 </Grid>
               </Grid>
@@ -80,8 +105,15 @@ function SearchBar(props) {
           <div />
           <div className={classes.column2}>
             <div className={classes.icons} />
-            <i class="material-icons">flight</i> Add a flight <br />
-            <i class="material-icons">directions_car</i> Add a car
+            <div>
+              <i class="material-icons">flight</i> Add a flight
+            </div>
+            <div>
+              <i class="material-icons">directions_car</i> Add a car
+            </div>
+            <div className={classes.buttonWrapper}>
+              <Button className={classes.button}>Search</Button>
+            </div>
           </div>
         </div>
       </div>
