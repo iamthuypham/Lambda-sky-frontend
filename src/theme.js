@@ -4,8 +4,8 @@ export default createMuiTheme({
   palette: {
     primary: {
       light: '#BD10E0',
-      main: '#2A0678',
-      dark: '#280547'
+      main: '#661FFF',
+      dark: '#521EC3'
     },
     secondary: {
       main: '#F5A623'
@@ -31,14 +31,5 @@ export default createMuiTheme({
         'linear-gradient(to right, rgb(245,166,35) 0%, rgb(181,106,133) 100%, rgb(102,31,255) 100%)'
     }
   },
-  overrides: {
-    MuiButton: {
-      text: {
-        background: '#F5A623',
-        borderRadius: 20,
-        border: 0,
-        padding: '3px 40px'
-      }
-    }
-  }
+  overrides: {}
 });

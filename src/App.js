@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import AuthenticationBar from './components/authentication/authenticationBar';
 
 const Home = props => (
   <div>
-    <Button>Home</Button>
+    <AuthenticationBar />
   </div>
 );
 
