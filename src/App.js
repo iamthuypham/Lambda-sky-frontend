@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import { Route } from 'react-router-dom';
+
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+);
 
 class App extends Component {
   render() {
-    return (
-      <Button variant="contained" color="primary">
-        Hello Sky Lambda
-      </Button>
-    );
+    return <Route exact path="/" component={Home} />;
   }
 }
 
