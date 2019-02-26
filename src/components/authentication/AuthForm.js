@@ -4,10 +4,38 @@ import { Field, reduxForm } from 'redux-form';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
 
-const ButtonWrapper = styled.div`
-  margin-top: '30px';
+const Logo = styled.div`
+  height: 65px;
+  width: 135px;
+  background-color: #280547;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
+
+const Close = styled.div`
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ef6003;
+  border-radius: 50%;
+`;
+
+const styles = theme => ({
+  authForm: {
+    flexGrow: 1
+  }
+});
 
 class AuthForm extends React.Component {
   renderInput = ({ input, label, meta: { error, touched } }) => {
@@ -25,7 +53,7 @@ class AuthForm extends React.Component {
           label={label}
           margin="normal"
         />
-        {error && touched ? <p>{error}</p> : null}
+        {error && touched ? <Typography>{error}</Typography> : null}
       </div>
     );
   };
@@ -33,20 +61,51 @@ class AuthForm extends React.Component {
   onFormSubmit = formValues => console.log(formValues);
 
   render() {
+    const { classes } = this.props;
     return ReactDOM.createPortal(
-      <form onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
-        <Field
-          name="email"
-          component={this.renderInput}
-          label="Email Address"
-        />
-        <Field name="password" component={this.renderInput} label="Password" />
-        <ButtonWrapper>
-          <Button type="submit" variant="contained" color="primary">
-            Register
-          </Button>
-        </ButtonWrapper>
-      </form>,
+      <Grid container xs={12} md={6}>
+        <Card>
+          <CardContent>
+            <Grid item xs={12} md={6}>
+              <Grid container direction="row">
+                <Grid item xs={2}>
+                  <Logo>
+                    <Typography variant="h4">LOGO</Typography>
+                  </Logo>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="h6">Register to Explore!</Typography>
+                </Grid>
+                <Grid item xs={3}>
+                  <Close>
+                    <Typography variant="body.1">X</Typography>
+                  </Close>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={6} className={classes.authForm}>
+              <form onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
+                <Field
+                  name="email"
+                  component={this.renderInput}
+                  label="Email Address"
+                />
+                <Field
+                  name="password"
+                  component={this.renderInput}
+                  label="Password"
+                />
+                <div>
+                  <Button type="submit" variant="contained" color="primary">
+                    Register
+                  </Button>
+                </div>
+              </form>
+            </Grid>
+          </CardContent>
+        </Card>
+      </Grid>,
+
       document.querySelector('#auth-modal')
     );
   }
@@ -63,7 +122,9 @@ const validate = formValues => {
   return errors;
 };
 
-export default reduxForm({
-  form: 'SignIn',
-  validate
-})(AuthForm);
+export default withStyles(styles)(
+  reduxForm({
+    form: 'SignIn',
+    validate
+  })(AuthForm)
+);
