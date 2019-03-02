@@ -20,10 +20,18 @@ export default createMuiTheme({
     fontFamily: ['"Helvetica Neue"', 'sans-serif'].join(','),
     h2: {
       fontWeight: 800
+    },
+    h3: {
+      fontWeight: 500
+    },
+    h4: {
+      fontWeight: 100,
+      fontSize: '2rem'
     }
   },
   spacing: {
-    unit: 8
+    unit: 8,
+    percentage: 5
   },
   custom: {
     skyBackground:
