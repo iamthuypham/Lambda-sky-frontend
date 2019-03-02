@@ -14,7 +14,10 @@ const AuthenticationBar = ({ classes }) => (
 
 const styles = theme => ({
   authenticationBar: {
-    background: theme.palette.primary.main
+    background: theme.palette.primary.dark,
+    opacity: `${theme.custom.skyOpacityPrimary}`,
+    paddingTop: `${theme.spacing.unit}px`,
+    paddingBottom: `${theme.spacing.unit}px`
   },
   authenticationBarCTA: {
     padding: `0 ${theme.spacing.unit * 3}px`
