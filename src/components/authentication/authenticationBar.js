@@ -1,20 +1,26 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 const AuthenticationBar = ({ classes }) => (
-  <div className={classes.authenticationBar}>
-    <Button>Sign In</Button>
-    <Button>Register</Button>
-  </div>
+  <Grid container justify="flex-end" className={classes.authenticationBar}>
+    <Grid item className={classes.authenticationBarCTA}>
+      <Button className={classes.authenticationBarButton}>Sign In</Button>
+      <Button className={classes.authenticationBarButton}>Register</Button>
+    </Grid>
+  </Grid>
 );
 
 const styles = theme => ({
   authenticationBar: {
-    background: theme.palette.primary.main,
-    '&& button': {
-      color: theme.palette.common.white
-    }
+    background: theme.palette.primary.main
+  },
+  authenticationBarCTA: {
+    padding: `0 ${theme.spacing.unit * 3}px`
+  },
+  authenticationBarButton: {
+    color: theme.palette.common.white
   }
 });
 

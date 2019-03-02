@@ -5,10 +5,12 @@ export default createMuiTheme({
     primary: {
       light: '#BD10E0',
       main: '#661FFF',
-      dark: '#521EC3'
+      dark: '#521EC3',
+      contrastText: '#FFFFFF'
     },
     secondary: {
-      main: '#F5A623'
+      main: '#F5A623',
+      contrastText: '#FFFFFF'
     }
   },
   typography: {
@@ -26,10 +28,14 @@ export default createMuiTheme({
     unit: 8
   },
   custom: {
-    skyBackground: {
-      background:
-        'linear-gradient(to right, rgb(245,166,35) 0%, rgb(181,106,133) 100%, rgb(102,31,255) 100%)'
-    }
+    skyBackground:
+      'linear-gradient(to right, rgb(245,166,35) 0%, rgb(181,106,133) 50%, rgb(102,31,255) 100%)'
   },
-  overrides: {}
+  overrides: {
+    MuiButton: {
+      text: {
+        borderRadius: 4
+      }
+    }
+  }
 });
