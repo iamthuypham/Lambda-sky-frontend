@@ -2,6 +2,7 @@ import React from 'react';
 
 import Hero from '../hero/Hero';
 import PageSection from '../utils/PageSection';
+import FooterSection from '../utils/FooterSection';
 import ActivityCard from '../card/ActivityCard';
 import HotelCard from '../card/HotelCard';
 import ReviewCard from '../card/ReviewCard';
@@ -69,6 +70,7 @@ const Home = ({ classes }) => (
         ))}
       </Grid>
     </PageSection>
+    <FooterSection />
   </div>
 );
 

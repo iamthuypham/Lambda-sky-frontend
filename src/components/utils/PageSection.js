@@ -11,7 +11,6 @@ const PageSection = ({ classes, title, subtitle, children }) => (
       direction="column"
       justify="center"
       alignItems="center"
-      className={classes.pageSectionDescription}
     >
       <Grid item xs={10}>
         <Typography variant="h3">{title}</Typography>
