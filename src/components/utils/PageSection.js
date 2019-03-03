@@ -26,7 +26,6 @@ const PageSection = ({ classes, title, subtitle, children }) => (
 
 const styles = theme => ({
   pageSection: {
-    height: '90vh',
     paddingTop: `${theme.spacing.unit * 5}px`,
     paddingBottom: `${theme.spacing.unit * 5}px`
   }

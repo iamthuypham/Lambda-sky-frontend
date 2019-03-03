@@ -10,6 +10,7 @@ export default createMuiTheme({
     },
     secondary: {
       main: '#F5A623',
+      dark: '#EF6003',
       contrastText: '#FFFFFF'
     }
   },
@@ -40,7 +41,8 @@ export default createMuiTheme({
     skyBackground:
       'linear-gradient(to right, rgb(245,166,35) 0%, rgb(181,106,133) 50%, rgb(102,31,255) 100%)',
     skyOpacityPrimary: 0.8,
-    skyOpacitySecondary: 0.6
+    skyOpacitySecondary: 0.6,
+    skyBoxShadow: `1px 1px 1px 1px #C8C8C8`
   },
   overrides: {
     MuiButton: {

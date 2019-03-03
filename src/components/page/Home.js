@@ -4,6 +4,7 @@ import Hero from '../hero/Hero';
 import PageSection from '../utils/PageSection';
 import ActivityCard from '../card/ActivityCard';
 import HotelCard from '../card/HotelCard';
+import ReviewCard from '../card/ReviewCard';
 
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -53,7 +54,20 @@ const Home = ({ classes }) => (
       title="What our clients say about us"
       subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     >
-      <div>children component here</div>
+      <Grid
+        container
+        spacing={8}
+        direction="row"
+        justify="space-around"
+        alignItems="center"
+        className={classes.pageSectionContent}
+      >
+        {exampleData.map(activity => (
+          <Grid item key={activity.id}>
+            <ReviewCard />
+          </Grid>
+        ))}
+      </Grid>
     </PageSection>
   </div>
 );

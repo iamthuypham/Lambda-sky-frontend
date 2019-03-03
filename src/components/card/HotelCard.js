@@ -64,12 +64,14 @@ const styles = theme => ({
     position: 'relative'
   },
   location: {
+    fontFamily: `${theme.typography.fontFamily}`,
     position: 'absolute',
     bottom: 20,
     left: 0,
     backgroundColor: `${theme.palette.secondary.main}`,
     color: `${theme.palette.secondary.contrastText}`,
-    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`
+    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
+    textTransform: 'uppercase'
   }
 });
 
