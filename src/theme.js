@@ -27,6 +27,9 @@ export default createMuiTheme({
     h4: {
       fontWeight: 100,
       fontSize: '2rem'
+    },
+    h6: {
+      fontSize: '1.2rem'
     }
   },
   spacing: {
