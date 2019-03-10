@@ -9,10 +9,12 @@ import { withStyles } from '@material-ui/core/styles';
 
 const Hero = ({ classes }) => (
   <>
-    <Grid container className={classes.heroMenu}>
+    <Grid container className={classes.heroMenu} direction="column-reverse">
+      <Grid item xs={12}>
+        <NavigationBar />
+      </Grid>
       <Grid item xs={12}>
         <AuthenticationBar />
-        <NavigationBar />
       </Grid>
     </Grid>
     <Grid
@@ -44,9 +46,9 @@ const styles = theme => ({
     position: 'relative'
   },
   heroMenu: {
-    zIndex: 1,
     position: 'absolute',
-    top: 0
+    top: 0,
+    zIndex: 1
   },
   title: {
     textTransform: 'uppercase',
